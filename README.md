@@ -25,7 +25,7 @@ When you download it to your device. Double click on the index.html file to run 
 
 ## Authors
 
-* **Elshibani Omar** - [PurpleBooth](https://github.com/eomar1122)
+* **Elshibani Omar** - (https://github.com/eomar1122)
 
 
 

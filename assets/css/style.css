@@ -1,0 +1,86 @@
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	color: #eccc68;
+	/*background-image: url('../images/spiration_dark.png');*/
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/soccer.jpg');
+	background-size: cover;   
+	background-position: center;
+	height: 100vh;
+	background-attachment: fixed;
+}
+
+
+h1 {
+	font-family: 'Pacifico', cursive;
+	font-size: 550%;
+	line-height: 150px;
+}
+
+.main-button-container {
+  margin-top: 175px;
+  max-width: 610px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timer-p {
+  margin-top: 40px;
+}
+
+.answer:hover {
+  background: pink;
+}
+
+.answer {
+  padding-top: 7px;
+  height: 45px;
+  color: black;
+  padding-left: 14px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.img-wrong {
+  margin-top: 40px;
+}
+
+.first-answer {
+  margin-top: 40px;
+}
+
+.btn {
+  width: 50%;
+  margin: 0 auto;
+  color: #2f3542;
+  background-color: #eccc68;
+  border: 2px solid #2f3542;
+}
+
+.btn:hover {
+  background-color: #2f3542;
+  color: #eccc68;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.reset-btn {
+  width: 30%;
+}
+
+#header {
+  margin: 50px;
+}
+
+#start-game {
+  margin-top: 50px;
+  width: 30%;
+}
+
+
+.reset-btn {
+  margin-top: 40px;
+}
+
+.summary-correct {
+  margin-top: 40px;
+}

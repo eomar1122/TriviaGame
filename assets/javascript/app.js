@@ -112,16 +112,15 @@ var quizData = [
 
 	}
  ];
+
 var correct = 0 ;
 var incorrect = 0;
 var unanswered = 0;
-var completed = currentRound + "/" + quizData.length;
 var currentRound = 0;
 var counter = 15;
 var userChoice;
 var intervalId;
 var counterWrap;
-// var images = ["assets/images/Sports2.jpg", "assets/images/Sports2.jpg", "assets/images/Sports2.jpg"];
 
 
 // ==========================================================================
@@ -188,8 +187,6 @@ function newQuestion() {
 function wins() {
 	$("#main-content").empty();
 	var showMwssage = $("<h2>");
-	// var imageWrap = ("<img src='" + images[currentRound] +"'/>")
-	// imageWrap.addClass("rounded mx-auto d-block");
 	showMwssage.text("You got it right, your answer was: " + quizData[currentRound].options[userChoice]);
 	$("#main-content").append(showMwssage);
 	correct++;
@@ -245,8 +242,6 @@ function reset() {
 	currentRound = 0;
 	counter = 15;
 	newQuestion();
-
-
 }
 
 
@@ -254,10 +249,12 @@ function reset() {
 // MAIN PROCESS
 // ==========================================================================
 
+// Start the game
 $("#start-game").on('click', function(){
 	newQuestion();
 });
 
+// Check the users answers
 $("#main-content").on('click', '.answers-btn', function(){
 	console.log($(this).val());
 	userChoice = parseInt($(this).val());
@@ -277,6 +274,7 @@ $("#main-content").on('click', '.answers-btn', function(){
 	}
 });
 
+// Reset the game
 $("#main-content").on('click', '.reset-btn', function(){
 	reset();
 });

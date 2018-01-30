@@ -83,3 +83,6 @@ h1 {
 .summary-correct {
   margin-top: 40px;
 }
+.hide {
+  display: none;
+}

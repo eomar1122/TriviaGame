@@ -64,54 +64,54 @@ var quizData = [
 
 	},
 
-	{
-		question: "Anfield is the home of which English Premier League club?",
-		options: ["Manchester United", "West Ham United", "Manchester City", "Liverpool"],
-		answer: 3
+	// {
+	// 	question: "Anfield is the home of which English Premier League club?",
+	// 	options: ["Manchester United", "West Ham United", "Manchester City", "Liverpool"],
+	// 	answer: 3
 
-	},
+	// },
 
-	{
-		question: "According to the official FIFA rulebook, how long can a goalkeeper hold onto the ball for?",
-		options: ["5 seconds", "3 Seconds", "10 seconds", "30 seconds"],
-		answer: 0
+	// {
+	// 	question: "According to the official FIFA rulebook, how long can a goalkeeper hold onto the ball for?",
+	// 	options: ["5 seconds", "3 Seconds", "10 seconds", "30 seconds"],
+	// 	answer: 0
 
-	},
+	// },
 
-	{
-		question: "Which of these players has never played for Manchester United?",
-		options: ["Eric Cantona", "Bobby Charlton", "Ryan Giggs", "Bobby Moore"],
-		answer: 3
+	// {
+	// 	question: "Which of these players has never played for Manchester United?",
+	// 	options: ["Eric Cantona", "Bobby Charlton", "Ryan Giggs", "Bobby Moore"],
+	// 	answer: 3
 
-	},
+	// },
 
-	{
-		question: "Who won the 2014 FIFA World Cup?",
-		options: ["Germany","Brazil","France", "Argentina"],
-		answer: 0
+	// {
+	// 	question: "Who won the 2014 FIFA World Cup?",
+	// 	options: ["Germany","Brazil","France", "Argentina"],
+	// 	answer: 0
 
-	},
+	// },
 
-	{
-		question: "Who won the 2017 UEFA Champions League?",
-		options: ["Bercelona", "Real Madrid", "Juventus", "Manchester United"],
-		answer: 1
+	// {
+	// 	question: "Who won the 2017 UEFA Champions League?",
+	// 	options: ["Bercelona", "Real Madrid", "Juventus", "Manchester United"],
+	// 	answer: 1
 
-	},
+	// },
 
-	{
-		question: "Who won the 2016 best soccer player in the world?",
-		options: ["Lionel Messi", "Hazard", "Cristiano Ronaldo", "Neymar"],
-		answer: 2
+	// {
+	// 	question: "Who won the 2016 best soccer player in the world?",
+	// 	options: ["Lionel Messi", "Hazard", "Cristiano Ronaldo", "Neymar"],
+	// 	answer: 2
 
-	},
+	// },
 
-	{
-		question: "Where was the 2014 Fifa World Cup?",
-		options: ["Spain", "South Africa", "Germany", "Brazil"],
-		answer: 3
+	// {
+	// 	question: "Where was the 2014 Fifa World Cup?",
+	// 	options: ["Spain", "South Africa", "Germany", "Brazil"],
+	// 	answer: 3
 
-	}
+	// }
  ];
 
 var correct = 0 ;
@@ -133,9 +133,9 @@ function countdown() {
 	clearInterval(intervalId);
 	intervalId = setInterval(decrement, 1000);
 	function decrement() {
-		counterWrap.text("Time remaining: " + counter);
 		counter--;
-		$("#main-content").prepend(counterWrap);
+		$("#time").text("time remaining: "+ counter);
+	
 		if (counter === 0) {
 			console.log("Incorrect");
 			$("#main-content").empty();
@@ -161,9 +161,10 @@ function newQuestion() {
 	// Check if we have more questions or not
 	if (currentRound < quizData.length) {
 		$("#main-content").empty();
+		$("#time").text("time remaining: "+ counter);
 		// Call countdown function 
-		counterWrap = $("<h2>");
 		countdown();
+
 		var questionWrap = $("<h2>");
 		console.log("Hello!");
 		var currentQuestion = quizData[currentRound];
@@ -218,6 +219,7 @@ function waitTime() {
 // Final page function
 function finalPage() {
 	$("#main-content").empty();
+	$("#time").addClass("hide");
 	var correctAnswers = $("<h2>");
 	correctAnswers.text("Correct answers = " + correct);
 	$("#main-content").append(correctAnswers);
@@ -249,8 +251,10 @@ function reset() {
 // MAIN PROCESS
 // ==========================================================================
 
-// Start the game
+$(document).ready(function(){
+	// Start the game
 $("#start-game").on('click', function(){
+	$("#time").removeClass("hide");
 	newQuestion();
 });
 
@@ -276,8 +280,11 @@ $("#main-content").on('click', '.answers-btn', function(){
 
 // Reset the game
 $("#main-content").on('click', '.reset-btn', function(){
+	$("#time").removeClass("hide");
 	reset();
 });
+})
+
 
 
 

@@ -134,7 +134,7 @@ function countdown() {
 	intervalId = setInterval(decrement, 1000);
 	function decrement() {
 		counter--;
-		$("#time").text("time remaining: "+ counter);
+		$("#time").text("Time remaining: "+ counter);
 	
 		if (counter === 0) {
 			console.log("Incorrect");
@@ -161,7 +161,7 @@ function newQuestion() {
 	// Check if we have more questions or not
 	if (currentRound < quizData.length) {
 		$("#main-content").empty();
-		$("#time").text("time remaining: "+ counter);
+		$("#time").text("Time remaining: "+ counter);
 		// Call countdown function 
 		countdown();
 
